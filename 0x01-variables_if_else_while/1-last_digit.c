@@ -16,12 +16,12 @@ int main(void)
 scanf("%d", &n);
 int i;
 i = n % 10;
-if(i > 5)
-printf("Last digit of %d is %d and is less than 5", n , i);
+if (i > 5)
+printf("Last digit of %d is %d and is less than 5", n ,i);
 else if (i == 0)
-printf("Last digit of %d is %d and is 0", n , i);
+printf("Last digit of %d is %d and is 0", n ,i);
 else if (i < 6 && i != 0)
-if(i > 5)
+if (i > 5)
 printf("Last digit of %d is %d and is less than 6 and not 0", n , i);
 return (0);
 }
