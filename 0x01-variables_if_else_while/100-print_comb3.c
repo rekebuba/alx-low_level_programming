@@ -19,7 +19,6 @@ putchar(',');
 putchar(' ');
 }
 }
-j = '2';
 }
 putchar('\n');
 return (0);
