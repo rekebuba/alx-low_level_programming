@@ -7,19 +7,19 @@
  */
 int main(void)
 {
-int n;
-scanf("%i", &n);
+long int n;
+scanf("%li", &n);
 if (n > 0)
 {
-printf("%i is positive\n", n);
+printf("%li is positive\n", n);
 }
 else if (n < 0)
 {
-printf("%i is negative\n", n);
+printf("%li is negative\n", n);
 }
 else if (n == 0)
 {
-printf("%i is zero\n", n);
+printf("%li is zero\n", n);
 }
 return (0);
 }
