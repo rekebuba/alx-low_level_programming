@@ -8,7 +8,6 @@
 int main(void)
 {
 int n;
-printf("");
 scanf("%i", &n);
 if (n > 0)
 {
