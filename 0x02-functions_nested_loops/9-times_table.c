@@ -17,17 +17,17 @@ _putchar(j);
 if (j > 9)
 {
 m = j % 10;
-n = (j - m)/ 10;
+n = (j - m) / 10;
 _putchar(m);
 _putchar(n);
 }
-if (j != 81)
+if(k != 0)
 {
 _putchar(',');
 _putchar(' ');
 _putchar(' ');
 }
 }
-_putchar('\n');
 }
+_putchar('\n');
 }
