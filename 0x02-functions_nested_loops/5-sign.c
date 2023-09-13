@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * print_sign - checks for absolute character.
- *@i: the number
+ *@n: the number
  * Return: 1 for positive number -1 for negative.
  */
 int print_sign(int n)
