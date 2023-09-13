@@ -5,8 +5,10 @@
  *
  * Return: Always 0.
  */
-int add(int i, int j)
+int main (void)
 {
+int i;
+int j;
 int k = add(i, j);
 return (k);
 }
