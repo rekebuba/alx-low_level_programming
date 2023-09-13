@@ -1,8 +1,8 @@
 #include "main.h"
 /**
  * _abs - checks for alphabetic character.
- *
- * Return: Always 0.
+ * *@c: the character
+ * Return: absolute value of number or zero.
  */
 int _abs(int i)
 {

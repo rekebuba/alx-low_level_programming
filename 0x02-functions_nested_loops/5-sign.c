@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * print_sign - checks for alphabetic character.
- *
- * Return: Always 0.
+ * print_sign - checks for absolute character.
+ * *@c: the number
+ * Return: 1 for positive number -1 for negative.
  */
 int print_sign(int n)
 {
