@@ -17,7 +17,7 @@ _putchar(j);
 if (j > 9)
 {
 m = j - (j % 10) / 10;
-_putchar("m")
+_putchar(m);
 }
 if (j != 81)
 {
