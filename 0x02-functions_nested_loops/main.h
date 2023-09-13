@@ -4,20 +4,16 @@ void print_alphabet_x10(void)
 char a = 'a';
 while (a <= 'z')
 {
-_putchar(a);
 a++;
 }
-_putchar('/n');
 }
 void print_alphabet(void)
 {
     char a = 'a';
 while (a <= 'z')
 {
-_putchar(a);
 a++;
 }
-_putchar('/n');
 }
 int _islower(int c);
 int _isalpha(int c);
