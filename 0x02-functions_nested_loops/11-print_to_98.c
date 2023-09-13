@@ -20,7 +20,7 @@ _putchar(' ');
 }
 }
 }
-if (n > 98)
+else if (n > 98)
 {
 for (i = 0; i <= 98; i++)
 {
