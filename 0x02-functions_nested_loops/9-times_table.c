@@ -1,15 +1,16 @@
 #include "main.h"
 
 /**
- * main -  the 9 times table
+ * main -  times_table
  *
  * Return: Always 0.
  */
 void times_table(void)
 {
-for (int i = 0; i = 9; i++)
+int i, k;
+for (i = 0; i = 9; i++)
 {
-for (int k = 0; k <= 9; k++)
+for (k = 0; k <= 9; k++)
 {
 _putchar(i * k);
 if ((i * k) != 81)
