@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * main -  the 9 times table
  *
