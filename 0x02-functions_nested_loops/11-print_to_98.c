@@ -2,33 +2,40 @@
 #include "main.h"
 /**
  * print_to_98 -  the 9 times table
- *
+ *@n: number
  * Return: Always 0.
  */
 void print_to_98(int n)
 {
-int i;
-if (n < 98)
+if (n <= 98)
 {
-for (i = 0; i <= 98; i++)
+for (; n <= 98; n++)
 {
-printf("%d", n + i);
-if(i != 98)
+if (n == 98)
 {
-_putchar(',');
-_putchar(' ');
+printf("%d", n);
+printf("\n");
+break;
+}
+else
+{
+printf("%d, ", n);
 }
 }
 }
-else if (n > 98)
+else 
 {
-for (i = 0; i <= 98; i++)
+for (; n >= 98; n--)
 {
-printf("%d", n - i);
-if (i != 98)
+if (n == 98)
 {
-_putchar(',');
-_putchar(' ');
+printf("%d", n);
+printf("\n");
+break;
+}
+else 
+{
+printf("%d", n);
 }
 }
 }
