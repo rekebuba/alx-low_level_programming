@@ -12,7 +12,7 @@ return (i);
 }
 if (i < 0)
 {
-return (i * -1);
+return (_abs(i));
 }
 return (0);
 }
