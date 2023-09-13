@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * main - checks for alphabetic character.
  *

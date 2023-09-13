@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * main - prints the last digit of a number.
  *
