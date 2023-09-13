@@ -3,7 +3,7 @@
 /**
  * _isalpha - _isalpha.
  *
- * Return: Always 0.
+ * Return: Always c.
  */
 int _isalpha(int c)
 {
