@@ -22,12 +22,16 @@ _putchar(' ');
 _putchar(m + '0');
 _putchar(n + '0');
 }
-else if (k != 0)
+else
+{
+if (k != 0)
 {
 _putchar(',');
 _putchar(' ');
 _putchar(' ');
 }
+_putchar(j + '0');
+} 
 }
 }
 _putchar('\n');
