@@ -10,9 +10,9 @@ void print_to_98(int n)
 int i;
 if (n < 98)
 {
-for(i = 0; i <= 98; i++)
+for (i = 0; i <= 98; i++)
 {
-_putchar((n + i) + '0');
+printf("%n", n + i);
 if(i != 98)
 {
 _putchar(',');
@@ -20,12 +20,12 @@ _putchar(' ');
 }
 }
 }
-if(n > 98)
+if (n > 98)
 {
-for(i = 0; i <= 98; i++)
+for (i = 0; i <= 98; i++)
 {
-_putchar((n - i) + '0');
-if(i != 98)
+printf("%n", n - i);
+if (i != 98)
 {
 _putchar(',');
 _putchar(' ');
