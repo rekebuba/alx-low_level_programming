@@ -12,7 +12,7 @@ if (n < 98)
 {
 for (i = 0; i <= 98; i++)
 {
-printf("%n", n + i);
+printf("%d", n + i);
 if(i != 98)
 {
 _putchar(',');
@@ -24,7 +24,7 @@ if (n > 98)
 {
 for (i = 0; i <= 98; i++)
 {
-printf("%n", n - i);
+printf("%d", n - i);
 if (i != 98)
 {
 _putchar(',');
