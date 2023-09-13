@@ -2,8 +2,8 @@
 
 /**
  * _isalpha - _isalpha.
- *
- * Return: Always c.
+ *@c: the character
+ * Return: 1 for alphabetic character or 0 for anything else.
  */
 int _isalpha(int c)
 {
