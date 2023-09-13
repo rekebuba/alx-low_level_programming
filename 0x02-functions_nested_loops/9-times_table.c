@@ -12,16 +12,17 @@ for (i = 0; i <= 9; i++)
 {
 for (k = 0; k <= 9; k++)
 {
-j = (i * k);
-_putchar(j);
+j = i * k;
 if (j > 9)
 {
 m = j % 10;
 n = (j - m) / 10;
-_putchar(m);
-_putchar(n);
+_putchar(',');
+_putchar(' ');
+_putchar(m + '0');
+_putchar(n + '0');
 }
-if (k != 0)
+else if (k != 0)
 {
 _putchar(',');
 _putchar(' ');
