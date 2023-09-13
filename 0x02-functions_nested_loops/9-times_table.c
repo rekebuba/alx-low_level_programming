@@ -3,7 +3,7 @@
 /**
  * times_table -  times_table
  *
- * Return: Always 0.
+ * Return: void.
  */
 void times_table(void)
 {
