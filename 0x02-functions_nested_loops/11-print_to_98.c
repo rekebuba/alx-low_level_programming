@@ -5,8 +5,17 @@
  *
  * Return: Always 0.
  */
-int main(void)
+void print_to_98(int n)
 {
-void print_to_98(int n);
+int i;
+for(i = 0; i <= 98; i++)
+{
+_putchar(n + i);
+if(i != 98)
+{
+_putchar(',');
+_putchar(' ');
+}
+}
 return (0);
 }
