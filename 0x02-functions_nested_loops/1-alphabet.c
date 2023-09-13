@@ -6,7 +6,14 @@
  */
 int main(void)
 {
-void print_alphabet(void);
-_putchar('\n');
+void print_alphabet(void)
+{
+char a = 'a';
+while (a <= 'z')
+{
+_putchar(a);
+a++;
+}
+}
 return (0);
 }
