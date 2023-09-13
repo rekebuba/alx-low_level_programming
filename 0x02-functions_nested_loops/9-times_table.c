@@ -19,20 +19,20 @@ m = j % 10;
 n = (j - m) / 10;
 _putchar(',');
 _putchar(' ');
-_putchar(m + '0');
 _putchar(n + '0');
+_putchar(m + '0');
 }
 else
 {
 if (k != 0)
 {
-_putchar(',');
-_putchar(' ');
-_putchar(' ');
+_putchar(44);
+_putchar(32);
+_putchar(32);
 }
 _putchar(j + '0');
-} 
 }
 }
 _putchar('\n');
+}
 }

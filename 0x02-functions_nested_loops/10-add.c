@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * main -  the 9 times table
+ * add -  the 9 times table
  *
  * Return: Always 0.
  */

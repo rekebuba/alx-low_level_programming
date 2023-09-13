@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * main -  the 9 times table
+ * print_to_98 -  the 9 times table
  *
  * Return: Always 0.
  */

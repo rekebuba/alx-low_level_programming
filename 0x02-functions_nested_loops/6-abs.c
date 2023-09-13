@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * main - checks for alphabetic character.
+ * _abs - checks for alphabetic character.
  *
  * Return: Always 0.
  */
