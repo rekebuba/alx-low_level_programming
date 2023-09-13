@@ -1,1 +1,1 @@
-printf("%d is negative", n);
+putchar((a / 10) + '0');
