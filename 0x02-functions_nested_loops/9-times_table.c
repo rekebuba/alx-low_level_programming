@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * main -  times_table
+ * times_table -  times_table
  *
  * Return: Always 0.
  */
@@ -12,7 +12,7 @@ for (i = 0; i <= 9; i++)
 {
 for (k = 0; k <= 9; k++)
 {
-j = (i * k) + '0';
+j = (i * k);
 _putchar(j);
 if (j > 9)
 {
@@ -21,7 +21,7 @@ n = (j - m) / 10;
 _putchar(m);
 _putchar(n);
 }
-if(k != 0)
+if (k != 0)
 {
 _putchar(',');
 _putchar(' ');
