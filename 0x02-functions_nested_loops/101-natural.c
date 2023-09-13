@@ -7,15 +7,15 @@
  */
 int main(void)
 {
-    int z = 0;
-    int sum = 0;
-    int i = 1023;
-    for (i = 1023; i >= 0; i--)
-    {
-        if ((i % 3) == 0 || (i % 5) == 0)
-        {
-            sum += i;
-        }
-    }
-    printf("%d", sum);
+int sum = 0;
+int i = 1023;
+for (i = 1023; i >= 0; i--)
+{
+if ((i % 3) == 0 || (i % 5) == 0)
+{
+sum += i;
+}
+}
+printf("%d", sum);
+return (0);
 }
