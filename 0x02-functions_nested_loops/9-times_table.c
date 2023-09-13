@@ -16,7 +16,7 @@ j = (i * k) + '0';
 _putchar(j);
 if (j > 9)
 {
-m = j - (j % 10) / 10;
+m = j / 10;
 _putchar(m);
 }
 if (j != 81)
