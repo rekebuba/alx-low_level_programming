@@ -13,7 +13,7 @@ for (i = '0'; i <= '9'; i++)
 for (k = '0'; k <= '9'; k++)
 {
 _putchar(i * k);
-if ((i * k) != '81')
+if ((i * k) != 81)
 {
 _putchar(',');
 _putchar(' ');
