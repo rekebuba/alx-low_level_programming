@@ -18,5 +18,6 @@ else if ( i == 0)
 printf("%d is zero\n", i);
 }
 }
+int largest_number(int a, int b, int c);
 
 #endif /* MAIN_H */
