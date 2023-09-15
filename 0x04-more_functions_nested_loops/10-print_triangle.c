@@ -7,7 +7,6 @@
  */
 void print_triangle(int size)
 {
-int k, i, j;
 if (size <= 0)
 {
 _putchar('\n');
