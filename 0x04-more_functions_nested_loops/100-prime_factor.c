@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 /**
  * main - draws a straight line
@@ -8,14 +9,17 @@
 
 int main(void)
 {
-int i;
-long long int num = 612852475143;
-for (i = 0; i < 10; i++)
+long i, max;
+long num = 612852475143;
+double square =  sqrt(num);
+
+for (i = 1; i < square; i++)
 {
 if (num % i == 0)
 {
-printf("%d", i);
+max = num / i;
 }
 }
+printf("%ld\n", max);
 return (0);
 }
