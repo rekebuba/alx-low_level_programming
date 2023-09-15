@@ -16,18 +16,18 @@ for (k = 0; k < size; k++)
 {
 for (i = 0; i < size; i++)
 {
-printf(" ");
+_putchar(' ');
 }
 for (j = 0; j <= k; j++)
 {
-printf("#");
+_putchar('#');
 }
-printf("\n");
+_putchar('\n');
 }
 }
 
 else if (size <= 0)
 {
-printf("\n");
+_putchar('\n');
 }
 }
