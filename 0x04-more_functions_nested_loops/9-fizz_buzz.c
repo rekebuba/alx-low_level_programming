@@ -1,11 +1,11 @@
 #include <stdio.h>
-#include "main.h"
 
 /**
  * main - draws a straight line
  *
  * Return: Always 0.
  */
+
 int main(void)
 {
 int i;
@@ -28,4 +28,5 @@ else
 printf("%d ", i);
 }
 }
+return (0);
 }
