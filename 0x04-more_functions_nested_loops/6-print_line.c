@@ -8,17 +8,18 @@
 void print_line(int n)
 {
 int k = 0;
-if (n > 0)
+
+if (n <= 0)
+{
+_putchar('\n');
+}
+else
 {
 while (k <= n)
 {
 _putchar('_');
 k++;
 }
-_putchar('\n');
-}
-else if (n <= 0)
-{
 _putchar('\n');
 }
 }
