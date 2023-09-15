@@ -12,19 +12,21 @@ if (size <= 0)
 {
 _putchar('\n');
 }
-
 else
 {
-for (k = 0; k < size; k++)
+int i, j;
+for (i = 1; i <= size; i++)
 {
-for (i = size - k; i < 1; i--)
+for (j = i; j < size; j++)
 {
 _putchar(' ');
 }
-for (j = 0; j <= k; j++)
+
+for (j = 1; j <= i; j++)
 {
 _putchar('#');
 }
+
 _putchar('\n');
 }
 }
