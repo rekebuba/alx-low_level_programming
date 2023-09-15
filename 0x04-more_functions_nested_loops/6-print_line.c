@@ -15,7 +15,7 @@ _putchar('\n');
 }
 else
 {
-while (k <= n)
+while (k < n)
 {
 _putchar('_');
 k++;
