@@ -12,7 +12,7 @@ int _atoi(char *s)
 {
 int i;
 int len = strlen(s);
-for (i = 0; i < len; i++)
+for (i = 0; i < len - 1; i++)
 {
 if (isdigit(s[i]))
 {
@@ -20,7 +20,7 @@ putchar(s[i]);
 }
 if (!isdigit(s[i]))
 {
-    return (0);
+return (0);
 }
 }
 return (0);
