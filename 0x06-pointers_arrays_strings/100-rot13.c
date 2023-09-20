@@ -5,6 +5,7 @@
 /**
 * rot13 - updates the value it points to to 98.
 * Return: 0
+* @n: character.
 */
 
 char *rot13(char *n)
