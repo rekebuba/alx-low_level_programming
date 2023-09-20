@@ -13,11 +13,14 @@ char *string_toupper(char *n)
 int i;
 int len = strlen(n);
 
-for (i = 0; i <= len; i++)
+for (i = 0; i < len; i++)
 {
-if (n[i] > 97 && n[i] < 122)
+if(isalpha(n[i]))
+{
+if (islower(n[i]))
 {
 n[i] = toupper(n[i]);
+}
 }
 }
 return (n);
