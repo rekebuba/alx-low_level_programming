@@ -15,12 +15,10 @@ int len = strlen(n);
 
 for (i = 0; i < len; i++)
 {
-if (isalpha(n[i]))
+if (n[i] == ' ' || n[i] == '\t' || n[i] == '\n' || n[i] == ',' || n[i] == ';' || n[i] == '.'
+|| n[i] == '!' || n[i] == '?' || n[i] == '"' || n[i] == '(' || n[i] == ')' || n[i] == '{' || n[i] == '}')
 {
-if (islower(n[i]))
-{
-n[i] = toupper(n[i]);
-}
+n[i] = n[i] - 32;
 }
 }
 return (n);
