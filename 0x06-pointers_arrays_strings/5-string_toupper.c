@@ -15,7 +15,7 @@ int len = strlen(n);
 
 for (i = 0; i < len; i++)
 {
-if(isalpha(n[i]))
+if (isalpha(n[i]))
 {
 if (islower(n[i]))
 {
