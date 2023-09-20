@@ -17,7 +17,10 @@ for (i = 0; i <= len; i++)
 {
 if (isalpha(n[i]))
 {
+if (islower(n[i]))
+{
 n[i] = toupper(n[i]);
+}
 }
 }
 return (n);
