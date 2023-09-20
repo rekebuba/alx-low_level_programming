@@ -13,7 +13,7 @@ char *cap_string(char *n)
 int i;
 int len = strlen(n);
 
-for (i = 0; i <= len; i++)
+for (i = 0; i < len; i++)
 {
 if (isalpha(n[i]))
 {
