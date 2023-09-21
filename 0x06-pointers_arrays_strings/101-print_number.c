@@ -1,31 +1,26 @@
 #include "main.h"
 
 /**
-* print_number - updates the value it points to to 98.
-* Return: 0
-* @num: is an integer.
-*/
+ * print_number - print numbers chars
+ * @n: integer params
+ * Return: 0
+ */
 
-void print_number(int num)
+void print_number(int n)
 {
-int reverse = 0;
-if (num < 0)
+unsigned int n1;
+
+n1 = n;
+
+if (n < 0)
 {
-putchar('-');
-num = -num;
+_putchar('-');
+n1 = -n;
 }
-if (num == 0)
+
+if (n1 / 10 != 0)
 {
-putchar('0');
+print_number(n1 / 10);
 }
-while (num > 0)
-{
-reverse = reverse * 10 + (num % 10);
-num /= 10;
-}
-while (reverse > 0)
-{
-putchar(reverse % 10 + '0');
-reverse /= 10;
-}
+_putchar((n1 % 10) + '0');
 }
