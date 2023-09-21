@@ -15,9 +15,9 @@ int o, j, i;
 o = 0;
 
 if (size <= 0)
-	{
-		printf("\n");
-		return;
+{
+printf("\n");
+return;
 }
 while (o < size)
 {
