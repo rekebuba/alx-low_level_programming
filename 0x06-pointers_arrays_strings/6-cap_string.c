@@ -1,6 +1,4 @@
 #include "main.h"
-#include <ctype.h>
-#include <string.h>
 
 /**
 * cap_string - updates the value it points to to 98.
