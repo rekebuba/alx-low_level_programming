@@ -1,29 +1,30 @@
 #include "main.h"
-#include <string.h>
-#include <ctype.h>
+#include <stdio.h>
 
 /**
-* rot13 - updates the value it points to to 98.
-* Return: 0
-* @n: character.
-*/
+ * rot13 - encoder rot13
+ * @s: pointer to string params
+ *
+ * Return: *s
+ */
 
-char *rot13(char *n)
+char *rot13(char *s)
 {
 int i;
-int len = strlen(n);
+int j;
+char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-for (i = 0; i < len; i++)
+for (i = 0; s[i] != '\0'; i++)
 {
-if (isalpha(n[i]))
+for (j = 0; j < 52; j++)
 {
-if (isupper(n[i]))
+if (s[i] == data1[j])
 {
-n[i] = (n[i] - 65 + 13) % 26 + 65;
-}
-else if (islower(n[i]))
-n[i] = (n[i] - 97 + 13) % 26 + 97;
+s[i] = datarot[j];
+break;
 }
 }
-return (n);
+}
+return (s);
 }
