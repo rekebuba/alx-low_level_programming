@@ -9,21 +9,17 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-while (*haystack)
+for (; *haystack != '\0'; haystack++)
 {
-while (*needle)
+char *l = haystack;
+char *p = needle;
+while (*l == *p && *p != '\0')
 {
-if (haystack != needle)
-{
-haystack++;
+l++;
+p++;
 }
-else if (haystack == needle)
-{
+if (*p == '\0')
 return (haystack);
-haystack++;
-needle++;
-}
-}
 }
 return (0);
 }
