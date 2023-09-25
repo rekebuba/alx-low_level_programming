@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* _memset - concatenates two strings.
+* _memset - function that fills memory with a constant byte.
 * Return: 0
 * @s: is pointer
 * @b: is pointer

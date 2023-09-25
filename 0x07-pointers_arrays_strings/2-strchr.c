@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* _strchr - concatenates two strings.
+* _strchr - function that locates a character in a string.
 * Return: 0
 * @s: is pointer
 * @c: character
