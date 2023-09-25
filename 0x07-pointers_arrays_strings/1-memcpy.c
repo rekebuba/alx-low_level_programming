@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* _memset - function that copies memory area.
+* _memcpy - function that copies memory area.
 * Return: 0
 * @dest: is pointer
 * @src: is pointer
