@@ -24,7 +24,7 @@ if (isdigit(*argv[i]))
 {
 sum += atoi(argv[i]);
 }
-if (!isdigit(*argv[i]))
+else
 {
 printf("Error\n");
 return (1);
