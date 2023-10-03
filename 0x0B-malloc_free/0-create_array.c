@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
-* create_array - creates an array of chars, and initializes it with a specific char.
+* create_array - creates an array of chars.
 * Return: 0
 * @size: is pointer
 * @c: is pointer
@@ -12,12 +12,8 @@ char *create_array(unsigned int size, char c)
 {
 unsigned int i;
 char *array;
-if (size == 0)
-{
-return (0);
-}
-array = (char *) malloc(sizeof(char) * (size + 1));
-if (array == NULL)
+array = (char *) malloc(sizeof(char) * (size));
+if (size == 0 || array == NULL)
 {
 return (0);
 }
