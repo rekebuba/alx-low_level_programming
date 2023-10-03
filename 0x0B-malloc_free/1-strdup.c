@@ -19,7 +19,7 @@ while (str[len] != '\0')
 len++;
 }
 array = (char *) (malloc(sizeof(char) * (len + 1)));
-if (str ==  NULL || array == NULL)
+if (str == NULL || array == NULL)
 {
 return (NULL);
 }
