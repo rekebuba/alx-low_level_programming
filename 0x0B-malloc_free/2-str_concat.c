@@ -3,14 +3,15 @@
 #include <stdlib.h>
 
 /**
- * _strdup - Create a array object
- * @str: character
- * return char* 
+ * str_concat - concatenates two strings.
+ * @s1: character
+ * @s2: character
+ * return: 0
  */
 
 char *str_concat(char *s1, char *s2)
 {
-unsigned int i, l , len1, len2;
+unsigned int i, l, len1, len2;
 char *array1;
 if (s1 == NULL)
 {
