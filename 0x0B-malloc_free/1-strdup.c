@@ -3,10 +3,10 @@
 #include <stdlib.h>
 
 /**
- * _strdup - Create a array object
- * @str: character
- * return char*
- */
+* _strdup - creates an array of chars, and initializes it with a specific char.
+* Return: 0
+* @str: is pointer
+*/
 
 char *_strdup(char *str)
 {

@@ -3,11 +3,11 @@
 #include <stdlib.h>
 
 /**
- * create_array - Create a array object
- * @size: integer
- * @c: character
- * return char* 
- */
+* create_array - creates an array of chars, and initializes it with a specific char.
+* Return: 0
+* @size: is pointer
+* @c: is pointer
+*/
 char *create_array(unsigned int size, char c)
 {
 unsigned int i;
