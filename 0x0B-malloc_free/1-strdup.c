@@ -5,7 +5,7 @@
 /**
  * _strdup - Create a array object
  * @str: character
- * return char* 
+ * return char*
  */
 
 char *_strdup(char *str)

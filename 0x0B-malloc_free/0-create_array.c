@@ -4,12 +4,10 @@
 
 /**
  * create_array - Create a array object
- * 
  * @size: integer
  * @c: character
  * return char* 
  */
-
 char *create_array(unsigned int size, char c)
 {
 unsigned int i;
