@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
-* _strdup - creates an array of chars, and initializes it with a specific char.
+* _strdup - creates an array of chars.
 * Return: 0
 * @str: is pointer
 */
