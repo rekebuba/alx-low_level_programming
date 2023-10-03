@@ -10,34 +10,43 @@
 
 char *str_concat(char *s1, char *s2)
 {
-    unsigned int i;
-    char *array1;
-    char *array2;
-    if (s1 == NULL)
-    {
-        s1 = "";
-    }
-    if (s2 == NULL)
-    {
-        s2 = "";
-    }
-    
-    array1 = (char *) (malloc(sizeof(s1) + 1));
-    if (array1 == NULL)
-    {
-        return (NULL);
-    }
-    for (i = 0; i < sizeof(s1) + 1; i++)
-    {
-        array1[i] = s1[i];
-    }
-    array1[sizeof(s1) + 1] = '\0';
-    array2 = realloc(array1, sizeof(s1) + sizeof(s2) + 1);
-    for (i = 0; i < sizeof(s1) + sizeof(s2) + 1; i++)
-    {
-        array2[i] = s2[i];
-    }
-    array2[sizeof(s1) + sizeof(s2) + 1] = '\0';
-    return (array2);
-
+unsigned int i, l , len1, len2;
+char *array1;
+if (s1 == NULL)
+{
+s1 = "";
+}
+if (s2 == NULL)
+{
+s2 = "";
+}
+len1 = 0, len2 = 0;
+while (s1[len1] != '\0')
+{
+len1++;
+}
+while (s2[len2] != '\0')
+{
+len2++;
+}
+array1 = (char *) (malloc(sizeof(char) * (len1 + len2 + 1)));
+if (array1 == NULL)
+{
+return (NULL);
+}
+i = 0;
+while (s1[i] != '\0')
+{
+array1[i] = s1[i];
+i++;
+}
+l = 0;
+while (s2[l] != '\0')
+{
+array1[i] = s2[l];
+i++;
+l++;
+}
+array1[i] = '\0';
+return (array1);
 }
