@@ -23,7 +23,7 @@ if (str == NULL || array == NULL)
 {
 return (NULL);
 }
-for (i = 0; i < len; i++)
+for (i = 0; str[i]; i++)
 {
 array[i] = str[i];
 }
