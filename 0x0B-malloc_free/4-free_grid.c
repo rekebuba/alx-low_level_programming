@@ -3,13 +3,19 @@
 #include <stdlib.h>
 
 /**
- * str_concat - concatenates two strings.
- * @s1: character
- * @s2: character
+ * free_grid - concatenates two strings.
+ * @grid: character
+ * @height: character
  * Return: 0
  */
 
 void free_grid(int **grid, int height)
 {
-    free(grid);
+int i;
+
+for (i = 0; i < height; i++)
+{
+free(grid[i]);
+}
+free(grid);
 }
