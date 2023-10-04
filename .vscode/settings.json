@@ -5,6 +5,7 @@
         "string_view": "c"
     },
     "cSpell.ignoreWords": [
-        "argstostr"
+        "argstostr",
+        "strtow"
     ]
 }
