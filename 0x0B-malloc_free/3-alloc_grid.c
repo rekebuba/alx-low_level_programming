@@ -41,4 +41,5 @@ grid[i][j] = 0;
 }
 }
 return (grid);
+free(grid);
 }
