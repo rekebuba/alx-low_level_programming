@@ -14,7 +14,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 char *array;
 unsigned int len1 = 0, len2 = 0;
-unsigned int i = 0, r = 0, j = 0;
+unsigned int i = 0, r = 0, j = 0, amount;
 if (s1 == NULL)
 {
 s1 = "";
@@ -31,11 +31,8 @@ while (s2[len2] != '\0')
 {
 len2++;
 }
-if (n >= len2)
-{
-return (s2);
-}
-array = malloc(sizeof(char) * (len1 + n + 1));
+amount = (n >= len2) ? len2 : n;
+array = malloc(sizeof(char) * (len1 + amount + 1));
 if (array == NULL)
 {
 return (NULL);
