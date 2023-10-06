@@ -30,5 +30,4 @@ for (i = 0; i < total; i++)
 ptr[i] = 0;
 }
 return (array);
-free(array);
 }
