@@ -42,7 +42,7 @@ for (i = 0; i < len1; i++)
 array[r] = s1[i];
 r++;
 }
-for (j = 0; j < n; j++)
+for (j = 0; j < amount; j++)
 {
 array[r] = s2[j];
 r++;
