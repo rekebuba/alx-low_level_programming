@@ -21,9 +21,10 @@ return (new_ptr);
 }
 
 /**
- * array_range - allocates memory for an array, using malloc.
- * @min: integer.
- * @max: integer.
+ * _realloc - allocates memory for an array, using malloc.
+ * @ptr: old memory.
+ * @old_size: unsigned integer.
+ * @new_size: unsigned integer.
  * Return: void.
  */
 
@@ -52,5 +53,5 @@ return (NULL);
 min_size = (old_size < new_size) ? old_size : new_size;
 _memcpy(new_ptr, ptr, min_size);
 free(ptr);
-return new_ptr;
+return (new_ptr);
 }
