@@ -3,10 +3,10 @@
 #include <stdlib.h>
 
 /**
- * _calloc - allocates memory for an array, using malloc.
- * @nmemb: unsigned int.
- * @size: unsigned int.
- * Return: void.
+ * array_range - allocates memory for an array, using malloc.
+ * @min: integer.
+ * @max: integer.
+ * Return: 0.
  */
 
 int *array_range(int min, int max)
@@ -23,10 +23,9 @@ if (ptr == NULL)
 {
 return (NULL);
 }
-for (i = min; i <= size; i++)
+for (i = 0; i <= size; i++)
 {
-ptr[i] = min;
-min++;
+ptr[i] = min + i;
 }
 return (ptr);
 }
