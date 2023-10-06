@@ -29,12 +29,12 @@ return (s);
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 unsigned int total;
-void *ptr;
+char *ptr;
 if (nmemb == 0 || size == 0)
 {
 return (NULL);
 }
-total = sizeof(nmemb) * size;
+total = nmemb * size;
 ptr = malloc(total);
 if (ptr == NULL)
 {
