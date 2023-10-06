@@ -29,7 +29,7 @@ len2++;
 }
 if (n >= len2)
 {
-return s2;
+return (s2);
 }
 array = malloc(sizeof(char) * (len1 + n + 1));
 if (array == NULL)
