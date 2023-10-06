@@ -13,7 +13,7 @@ void *array;
 array = malloc(sizeof(b));
 if (array == NULL)
 {
-exit (98);
+exit(98);
 }
 return (array);
 }
