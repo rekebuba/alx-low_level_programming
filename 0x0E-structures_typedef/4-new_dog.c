@@ -18,8 +18,7 @@ if (ptr == NULL)
 return (NULL);
 }
 ptr->name = name;
-ptr->owner = owner;
 ptr->age = age;
+ptr->owner = owner;
 return (ptr);
-free(ptr);
 }
