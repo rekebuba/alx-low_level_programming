@@ -2,15 +2,14 @@
 
 /**
  * free_dog - frees dogs.
- * 
- * @pd: structure.
+ * @d: structure.
  */
 
 void free_dog(dog_t *d)
 {
-int i;
+unsigned int i;
 for (i = 0; i < sizeof(dog_t); i++)
 {
-ree(d[i]);
+free(d[i]);
 }
 }
