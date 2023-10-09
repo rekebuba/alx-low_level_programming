@@ -8,9 +8,10 @@
 
 void free_dog(dog_t *d)
 {
-unsigned int i;
-for (i = 0; i < sizeof(dog_t); i++)
+if (d)
 {
-free(d[i]);
+free(d->name);
+free(d->owner);
+free(d);
 }
 }
