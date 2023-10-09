@@ -7,27 +7,27 @@
  */
 int _strlen(char *word)
 {
-    int i = 0;
-    while (word[i] != '\0')
-    {
-        i++;
-    }
-    return i;
+int i = 0;
+while (word[i] != '\0')
+{
+i++;
+}
+return (i);
 }
 /**
  * _strcopy - copy the string
- * 
  * @word1: characters.
  * @word2: characters.
  */
 void _strcopy(char *word1, char *word2)
 {
-    int i;
-    for (i = 0; i < _strlen(word2); i++)
-    {
-        word1[i] = word2[i];
-    }
+int i;
+for (i = 0; i < _strlen(word2); i++)
+{
+word1[i] = word2[i];
 }
+}
+
 /**
  * new_dog - creates a new dog.
  * @name: name
