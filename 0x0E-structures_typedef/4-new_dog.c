@@ -19,7 +19,7 @@ if (ptr == NULL)
 {
 return (NULL);
 }
-ptr->age = age;
+
 while (name[len1] != '\0')
 {
 len1++;
@@ -28,8 +28,8 @@ while (owner[len2] != '\0')
 {
 len2++;
 }
-ptr->name = malloc(len1 + 1);
-ptr->owner = malloc(len2 + 1);
+ptr->name = malloc(sizeof(char) * (len1 + 1));
+ptr->owner = malloc(sizeof(char) * (len2 + 1));
 if (ptr->name == NULL || ptr->owner == NULL)
 {
 free(ptr);
@@ -46,5 +46,6 @@ for (i = 0; i < len2; i++)
 ptr->owner[i] = owner[i];
 }
 ptr->owner[len2] = '\0';
+ptr->age = age;
 return (ptr);
 }
