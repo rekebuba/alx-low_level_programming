@@ -1,6 +1,33 @@
 #include "dog.h"
 #include <stdlib.h>
-
+/**
+ * _strlen - length of the string.
+ * @word: character
+ * Return: 0
+ */
+int _strlen(char *word)
+{
+    int i = 0;
+    while (word[i] != '\0')
+    {
+        i++;
+    }
+    return i;
+}
+/**
+ * _strcopy - copy the string
+ * 
+ * @word1: characters.
+ * @word2: characters.
+ */
+void _strcopy(char *word1, char *word2)
+{
+    int i;
+    for (i = 0; i < _strlen(word2); i++)
+    {
+        word1[i] = word2[i];
+    }
+}
 /**
  * new_dog - creates a new dog.
  * @name: name
@@ -11,46 +38,23 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-int len1 = 0, len2 = 0, i;
 dog_t *ptr;
-while (name[len1] != '\0')
-{
-len1++;
-}
-while (owner[len2] != '\0')
-{
-len2++;
-}
-
 ptr = malloc(sizeof(dog_t));
 if (ptr == NULL)
-{
 return (NULL);
-}
-ptr->name = malloc(sizeof(char) * (len1 + 1));
-if (ptr->name == NULL)
-{
-free(ptr);
-return (NULL);
-}
-ptr->owner = malloc(sizeof(char) * (len2 + 1));
-if ( ptr->owner == NULL)
+ptr->name = malloc(sizeof(char) * (_strlen(name) + 1));
+ptr->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
+if (ptr->name == NULL || ptr->owner == NULL)
 {
 free(ptr);
 free(ptr->name);
+free(ptr->owner);
 return (NULL);
 }
-for (i = 0; i < len1; i++)
-{
-ptr->name[i] = name[i];
-}
-ptr->name[len1] = '\0';
-
-for (i = 0; i < len2; i++)
-{
-ptr->owner[i] = owner[i];
-}
-ptr->owner[len2] = '\0';
+_strcopy(ptr->name, name);
+_strcopy(ptr->owner, owner);
+ptr->name[_strlen(name)] = '\0';
+ptr->owner[_strlen(owner)] = '\0';
 ptr->age = age;
 return (ptr);
 }

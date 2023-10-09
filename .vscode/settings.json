@@ -7,6 +7,7 @@
     "cSpell.ignoreWords": [
         "argstostr",
         "nconcat",
+        "strcopy",
         "strtow"
     ]
 }
