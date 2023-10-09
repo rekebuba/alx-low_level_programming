@@ -1,4 +1,6 @@
-#ifndef SUM(x, y) ((x) + (y))
+#ifndef MAIN
+#define MAIN
+
 #define SUM(x, y) ((x) + (y))
 
 #endif 
