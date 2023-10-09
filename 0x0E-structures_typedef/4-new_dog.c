@@ -21,4 +21,5 @@ ptr->name = name;
 ptr->owner = owner;
 ptr->age = age;
 return (ptr);
+free(ptr);
 }
