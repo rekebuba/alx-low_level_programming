@@ -5,14 +5,13 @@
  * @name: name of yhe person
  * @age: their age
  * @owner: owner
- * 
  * description: long description
  */
 struct dog
 {
 char *name;
 float age;
-char *owner; 
+char *owner;
 };
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
