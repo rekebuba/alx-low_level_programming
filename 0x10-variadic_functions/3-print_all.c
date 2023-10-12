@@ -16,7 +16,7 @@ va_list(arg);
 va_start(arg, format);
 if (format)
 {
-while (format[len] != '\0')
+while (format[len])
 {
 switch (format[len])
 {
