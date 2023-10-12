@@ -1,6 +1,15 @@
 #include <stdarg.h>
 #include <stdio.h>
 
+/**
+ * print_strings - print string. 
+ * 
+ * @separator: constant character
+ * @n: unsigned int.
+ * @...: continuity
+ * Return: void.
+ */
+
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 unsigned int i;
