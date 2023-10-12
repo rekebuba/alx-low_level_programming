@@ -6,7 +6,6 @@
  * print_all - Write a function that prints anything.
  * @format: constant
  * @...: list of argument
- * @Return: void.
  */
 
 void print_all(const char *const format, ...)
