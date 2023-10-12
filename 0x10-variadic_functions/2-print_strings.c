@@ -2,8 +2,7 @@
 #include <stdio.h>
 
 /**
- * print_strings - print string. 
- * 
+ * print_strings - print string.
  * @separator: constant character
  * @n: unsigned int.
  * @...: continuity
