@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * print_strings - print string.
+ * print_strings - print string. 
  * @separator: constant character
  * @n: unsigned int.
  * @...: continuity
@@ -16,19 +16,19 @@ va_list arg;
 va_start(arg, n);
 for (i = 0; i < n; i++)
 {
-	char *str = va_arg(arg, char*);
-	if (str != NULL)
-	{
-		printf("%s", str);
-	}
-	else
-	{
-		printf("(nil)");
-	}
-	if (separator != NULL && i < n - 1)
-	{
-		printf("%s", separator);
-	}
+char *str = va_arg(arg, char*);
+if (str != NULL)
+{
+printf("%s", str);
+}
+else
+{
+printf("(nil)");
+}
+if (separator != NULL && i < n - 1)
+{
+printf("%s", separator);
+}
 }
 printf("\n");
 va_end(arg);
