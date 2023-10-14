@@ -15,7 +15,7 @@ int num1, num2;
 char *op;
 if (argc != 4)
 {
-printf("ERROR\n");
+printf("Error\n");
 return (98);
 }
 num1 = atoi(argv[1]);
