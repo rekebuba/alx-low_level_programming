@@ -4,7 +4,7 @@ size_t list_len(const list_t *h)
 {
     const list_t *len = h;
     int count = 0;
-    while (len != NULL)
+    while (len->str != NULL)
     {
         count++;
     }
