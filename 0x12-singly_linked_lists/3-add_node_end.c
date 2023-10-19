@@ -16,12 +16,6 @@ if (end_node == NULL)
 return (NULL);
 }
 duplicate = strdup(str);
-if (duplicate == NULL)
-{
-return (NULL);
-free(end_node);
-}
-
 end_node->str = strdup(duplicate);
 end_node->len = strlen(duplicate);
 end_node->next = NULL;
