@@ -4,7 +4,7 @@
  * add_node_end - adds a new node at the end
  * @head: a double pointer to struct list_t
  * @str: the new string to be inserted
- * Return: list_t* 
+ * Return: list_t*
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
@@ -26,7 +26,7 @@ end_node->str = strdup(duplicate);
 end_node->len = strlen(duplicate);
 end_node->next = NULL;
 
-if (*head == NULL) 
+if (*head == NULL)
 {
 *head = end_node;
 return (end_node);

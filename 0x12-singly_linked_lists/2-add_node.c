@@ -4,7 +4,7 @@
  * add_node - add a new node at the beginning.
  * @head: a double pointer to struct list_t
  * @str: the new string to be inserted
- * Return: list_t* 
+ * Return: list_t*
  */
 list_t *add_node(list_t **head, const char *str)
 {
