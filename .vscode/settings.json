@@ -6,7 +6,9 @@
     },
     "cSpell.ignoreWords": [
         "argstostr",
+        "listint",
         "nconcat",
+        "nodeint",
         "strcopy",
         "strtow"
     ]
