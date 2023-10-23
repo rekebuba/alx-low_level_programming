@@ -4,11 +4,11 @@
 void free_listint(listint_t *head)
 {
     listint_t *ptr = head;
-    while (ptr->next != NULL)
+    listint_t *next;
+    while (ptr != NULL)
     {
-        ptr = ptr->next;
-        free(head->n);
-        free(head);
-        head = ptr;
+        next = ptr->next;
+        free(ptr);
+        ptr = next;
     }
 }
