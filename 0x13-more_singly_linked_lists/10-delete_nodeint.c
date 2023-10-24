@@ -4,7 +4,7 @@
  * delete_nodeint_at_index - deletes the node at index
  * @head: head of listint_t
  * @index: index of the node
- * Returns: 1 if it succeeded, -1 if it failed
+ * Return: 1 if it succeeded, -1 if it failed
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
@@ -19,7 +19,7 @@ return (-1);
 if (index == 0)
 {
 *head = ptr->next;
-free (ptr);
+free(ptr);
 return (1);
 }
 
