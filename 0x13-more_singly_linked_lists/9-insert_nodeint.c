@@ -22,7 +22,7 @@ if (idx == 0)
 new_node->n = n;
 new_node->next = *head;
 *head = new_node;
-return new_node;
+return (new_node);
 }
 for (i = 1; ptr != NULL && i < idx; i++)
 {
