@@ -4,7 +4,7 @@
  * add_nodeint - adds a new node at the beginning
  * @head: head of listint_t
  * @n: - the value to be added
- * Returns: listint_t* (new_node)
+ * Return: listint_t* (new_node)
  */
 
 listint_t *add_nodeint(listint_t **head, const int n)
