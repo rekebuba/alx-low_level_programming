@@ -2,8 +2,8 @@
 
 /**
  * reverse_listint - reverses a listint_t
- * @head: head of listint_t 
- * Return: listint_t* 
+ * @head: head of listint_t
+ * Return: listint_t*
  */
 listint_t *reverse_listint(listint_t **head)
 {

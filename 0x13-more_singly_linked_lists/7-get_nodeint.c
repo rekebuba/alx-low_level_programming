@@ -4,7 +4,7 @@
  * get_nodeint_at_index - Get the nodeint at index object
  * @head: head of listint_t
  * @index: index of the node
- * Returns: the nth node of listint_t* 
+ * Return: the nth node of listint_t*
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
@@ -16,7 +16,7 @@ return (NULL);
 }
 while (count != index)
 {
-ptr = ptr->next; 
+ptr = ptr->next;
 count++;
 }
 return (ptr);
