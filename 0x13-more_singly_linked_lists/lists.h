@@ -1,5 +1,5 @@
-#ifndef HEADER_FILE
-#define HEADER_FILe
+#ifndef FILE
+#define FILE
 
 #include <stdio.h>
 #include <string.h>
@@ -34,4 +34,4 @@ size_t print_listint_safe(const listint_t *head);
 size_t free_listint_safe(listint_t **h);
 listint_t *find_listint_loop(listint_t *head);
 
-#endif /*HEADER_FILe*/
+#endif 
