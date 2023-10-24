@@ -1,5 +1,5 @@
-#ifndef FILE
-#define FILE
+#ifndef SINGLY_LINKED_
+#define SINGLY_LINKED_
 
 #include <stdio.h>
 #include <string.h>
