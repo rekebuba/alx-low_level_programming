@@ -11,7 +11,7 @@ listint_t *ptr = *head;
 listint_t *next;
 if (ptr == NULL)
 {
-return (NULL);
+return;
 }
 while (ptr != NULL)
 {
