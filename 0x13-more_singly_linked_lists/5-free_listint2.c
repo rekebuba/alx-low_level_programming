@@ -16,6 +16,6 @@ next = ptr->next;
 free(ptr);
 ptr = next;
 }
-next = NULL;
+free(next);
 *head = NULL;
 }
