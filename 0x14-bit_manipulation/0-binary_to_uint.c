@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 
 /**
  * binary_to_uint - converts a binary number to an unsigned int.
@@ -24,7 +23,7 @@ unsigned int binary_to_uint(const char *b)
         }
         len++;
     }
-    for (i = len; i >= 0; i--)
+    for (i = len; i > 0; i--)
     {
         sum += (b[i] - '0') * position;
         position *= 2;
