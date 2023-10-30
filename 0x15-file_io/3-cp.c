@@ -13,13 +13,13 @@ int main(int argc, char *argv[])
     }
     file_from = argv[1];
     file_to = argv[2];
-    file1 = open(file_from, O_CREAT | O_RDONLY, 664);
+    file1 = open(file_from, O_RDONLY);
     if (file1 == -1)
     {
         dprintf(2, "Error: Can't read from file %s\n", file_from);
         return (98);
     }
-    file2 = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, 664);
+    file2 = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, 0664);
     if (file2 == -1)
     {
         dprintf(2, "Error: Can't write to %s\n", file_to);
