@@ -5,7 +5,7 @@ int main(int argc, char *argv[])
     int file1, file2, file1_close, file2_close;
     char *file_from;
     char *file_to;
-    if (argc != 2)
+    if (argc != 3)
     {
         dprintf(2, "Usage: cp file_from file_to\n");
         return (97);
