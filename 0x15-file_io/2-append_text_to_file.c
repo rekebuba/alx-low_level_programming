@@ -43,7 +43,6 @@ if (file == -1)
 {
 return (-1);
 }
-lseek(file, 0L, SEEK_END); /* Go to the end of the file*/
 if (text_content == NULL)
 {
 return (-1);
