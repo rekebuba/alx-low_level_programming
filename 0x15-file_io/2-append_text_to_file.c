@@ -38,7 +38,7 @@ if (access(filename, F_OK) != 0)
 {
 return (-1);
 }
-file = open(filename, O_RDONLY | O_APPEND, 0600);
+file = open(filename, O_WRONLY | O_APPEND, 0600);
 if (file == -1)
 {
 return (-1);
