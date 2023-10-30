@@ -1,20 +1,6 @@
 #include "main.h"
 
-
-/**
- * _strlen - find the length of the string
- * @s: the string
- * Return: int
- */
-int _strlen(char *s)
-{
-int count = 0;
-while (s[count] != '\0')
-{
-count++;
-}
-return (count);
-}
+int f_exists(const char *filename);
 
 /**
 * append_text_to_file - a function that appends text at the end of a file
@@ -29,29 +15,41 @@ return (count);
 */
 int append_text_to_file(const char *filename, char *text_content)
 {
-int file, write_file;
-if (filename == NULL)
-{
-return (-1);
+	int file, to_write, len = 0;
+
+	if (!filename)
+		return (-1);
+
+	/* Checks if file does not exist */
+	if (!f_exists(filename))
+		return (-1);
+
+	file = open(filename, O_WRONLY | O_APPEND, 0600);
+	if (file == -1)
+		return (-1);
+
+	if (text_content)
+	{
+		while (text_content[len])
+			len++;
+
+		to_write = write(file, text_content, len);
+		if (to_write == -1)
+			return (-1);
+	}
+
+	close(file);
+	return (1);
 }
-if (access(filename, F_OK) != 0)
+
+/**
+* f_exists - checks if a file exists
+* @filename: the name of the file
+* Return: returns a non-zero number if it exists and 0 otherwise
+*/
+int f_exists(const char *filename)
 {
-return (-1);
-}
-file = open(filename, O_WRONLY | O_APPEND, 0600);
-if (file == -1)
-{
-return (-1);
-}
-if (text_content == NULL)
-{
-return (-1);
-}
-write_file = write(file, text_content, _strlen(text_content));
-if (write_file == -1)
-{
-return (-1);
-}
-close(file);
-return (1);
+	struct stat buffer;
+
+	return (stat(filename, &buffer) == 0);
 }
