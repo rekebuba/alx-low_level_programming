@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
         dprintf(2, "Error: Can't close fd %i\n", file1_close);
         return (100);
     }
-    file2_close = close(file1);
+    file2_close = close(file2);
     if (file2_close != 0)
     {
         dprintf(2, "Error: Can't close fd %i\n", file2_close);
