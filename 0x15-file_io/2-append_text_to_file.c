@@ -34,6 +34,10 @@ if (filename == NULL)
 {
 return (-1);
 }
+if (access(filename, F_OK) != 0)
+{
+return (-1);
+}
 file = open(filename, O_RDONLY | O_APPEND, 0600);
 if (file == -1)
 {
