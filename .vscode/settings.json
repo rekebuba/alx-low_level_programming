@@ -12,5 +12,8 @@
         "strcopy",
         "strtow",
         "textfile"
+    ],
+    "cSpell.words": [
+        "fsacnf"
     ]
 }
