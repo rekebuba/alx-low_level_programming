@@ -2,9 +2,10 @@
 
 int main(int argc, char *argv[])
 {
-    int file1, file2, file1_close, file2_close;
+    int file1, file2, file1_close, file2_close, to_read, to_write;
     char *file_from;
     char *file_to;
+    char buffer[1024];
     if (argc != 3)
     {
         dprintf(2, "Usage: cp file_from file_to\n");
@@ -24,7 +25,9 @@ int main(int argc, char *argv[])
         dprintf(2, "Error: Can't write to %s\n", file_to);
         return (99);
     }
-    
+    to_read = read(file1, buffer, 1024);
+    to_write = write(file2, buffer, to_read);
+
     file1_close = close(file1);
     if (file1_close != 0)
     {
@@ -37,5 +40,5 @@ int main(int argc, char *argv[])
         dprintf(2, "Error: Can't close fd %i\n", file2_close);
         return (100);
     }
-    return (0);
+    return (to_write);
 }
