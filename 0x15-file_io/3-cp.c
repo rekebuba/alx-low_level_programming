@@ -1,11 +1,18 @@
 #include "main.h"
 
+/**
+* main - a program that copies the content of a file to anothe file
+* @argc: the number of cmd-line arguments
+* @argv: argv[1] (source file), argv[2] (destination file)
+* Return: returns (0) success, exits on error
+*/
+
 int main(int argc, char *argv[])
 {
     int file1, file2, file1_close, file2_close, to_read, to_write;
     char *file_from;
     char *file_to;
-    char buffer[1024];
+    char *buffer;
     if (argc != 3)
     {
         dprintf(2, "Usage: cp file_from file_to\n");
@@ -16,28 +23,40 @@ int main(int argc, char *argv[])
     file1 = open(file_from, O_RDONLY);
     if (file1 == -1)
     {
-        dprintf(2, "Error: Can't read from file %s\n", file_from);
+        dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
         return (98);
     }
     file2 = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, 0664);
     if (file2 == -1)
     {
-        dprintf(2, "Error: Can't write to %s\n", file_to);
+        dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
         return (99);
     }
+    buffer = malloc(sizeof(char) * 1024);
+    if (buffer == NULL)
+        return (-1);
     to_read = read(file1, buffer, 1024);
+    if (to_read == -1)
+    {
+        dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+        return (98);
+    }
     to_write = write(file2, buffer, to_read);
-
+    if (to_write != to_read)
+    {
+        dprintf(STDERR_FILENO, "Error: Can't write from file %s\n", file_to);
+        return (99);
+    }
     file1_close = close(file1);
     if (file1_close != 0)
     {
-        dprintf(2, "Error: Can't close fd %i\n", file1_close);
+        dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file1_close);
         return (100);
     }
     file2_close = close(file2);
     if (file2_close != 0)
     {
-        dprintf(2, "Error: Can't close fd %i\n", file2_close);
+        dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file2_close);
         return (100);
     }
     return (to_write);
