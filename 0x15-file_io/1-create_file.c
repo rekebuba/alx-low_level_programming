@@ -41,5 +41,5 @@ if (len)
 {
 write(file, text_content, len);
 }
-return (bite == len ? -1 : 1);
+return (bite == len ? 1 : -1);
 }
