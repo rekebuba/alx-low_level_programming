@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     }
     file_from = argv[1];
     file_to = argv[2];
-    file1 = open(file_from, O_CREAT | O_RDONLY);
+    file1 = open(file_from, O_CREAT | O_RDONLY, 664);
     if (file1 == -1)
     {
         dprintf(2, "Error: Can't read from file %s\n", file_from);
