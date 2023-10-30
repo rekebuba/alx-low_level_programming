@@ -10,8 +10,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
         FILE *file;
-        ssize_t to_read, to_write;
-        char buffer[1024];
+        ssize_t to_write;
         if (filename == NULL)
         {
             return (0);
@@ -21,19 +20,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
         {
             return (0);
         }
-        to_read = fread(buffer, sizeof(char), letters, file);
-        if (to_read < 0) 
-        {
-            fclose(file);
-            return (0);
-        }
-        buffer[to_read] = '\0';
-        to_write = fwrite(buffer, sizeof(char), to_read, stdout);
-        if (to_write != to_read)
-        {
-            fclose(file);
-            return (0);
-        }
+        to_write = fwrite(file, sizeof(char), letters, stdout);
         fclose(file);
         return (to_write);
 }
