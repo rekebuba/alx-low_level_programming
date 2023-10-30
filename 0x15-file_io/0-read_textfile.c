@@ -25,6 +25,10 @@ if (file == -1)
 return (0);
 }
 buffer = malloc((sizeof(char) * letters));
+if (buffer == NULL)
+{
+return (0);
+}
 to_read = read(file, buffer, letters);
 to_write = write(STDOUT_FILENO, buffer, to_read);
 if (to_write != to_read)
@@ -34,5 +38,5 @@ return (0);
 }
 free(buffer);
 close(file);
-return (to_write);
+return (to_read);
 }
