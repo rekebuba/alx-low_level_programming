@@ -28,13 +28,13 @@ int main(int argc, char *argv[])
     file1_close = close(file1);
     if (file1_close != 0)
     {
-        dprintf(2, "Error: Can't close fd %i", file1_close);
+        dprintf(2, "Error: Can't close fd %i\n", file1_close);
         return (100);
     }
     file2_close = close(file1);
     if (file2_close != 0)
     {
-        dprintf(2, "Error: Can't close fd %i", file2_close);
+        dprintf(2, "Error: Can't close fd %i\n", file2_close);
         return (100);
     }
     return (0);
