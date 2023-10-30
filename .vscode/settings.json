@@ -10,6 +10,7 @@
         "nconcat",
         "nodeint",
         "strcopy",
-        "strtow"
+        "strtow",
+        "textfile"
     ]
 }
