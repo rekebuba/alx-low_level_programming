@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
     printf("  OS/ABI:                            %d\n", elfHeader.e_ident[7]);
     printf("  ABI Version:                       %d\n", elfHeader.e_ident[8]);
     printf("  Type:                              0x%04x\n", elfHeader.e_type);
-    printf("  Entry point address:               0x%llx\n", elfHeader.e_entry);
+    printf("  Entry point address:               0x%lx\n", elfHeader.e_entry);
 
     close(fd);
     return 0;
