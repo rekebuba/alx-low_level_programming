@@ -14,6 +14,15 @@
         "textfile"
     ],
     "cSpell.words": [
-        "fsacnf"
+        "Ehdr",
+        "ehsize",
+        "fsacnf",
+        "phentsize",
+        "phnum",
+        "phoff",
+        "shentsize",
+        "shnum",
+        "shoff",
+        "shstrndx"
     ]
 }
