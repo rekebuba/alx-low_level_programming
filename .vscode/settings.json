@@ -2,7 +2,8 @@
     "files.associations": {
         "main.h": "c",
         "stdio.h": "c",
-        "string_view": "c"
+        "string_view": "c",
+        "string.h": "c"
     },
     "cSpell.ignoreWords": [
         "argstostr",
