@@ -1,25 +1,42 @@
-#include <main.h>
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
+#include "main.h"
 
+/**
+ * _pow -
+ * 
+ * @base:
+ * @exponent:
+ * Return: unsigned int
+ */
+unsigned int _pow(int base, int exponent)
+{
+    unsigned int result = 1;
+    int i;
+
+    for (i = 0; i < exponent; i++)
+    {
+        result *= base;
+    }
+
+    return result;
+}
+
+/**
+ * @brief 
+ * 
+ * @param b 
+ * @return unsigned int 
+ */
 unsigned int binary_to_uint(const char *b)
 {
-    int len = strlen(b);
-    int i;
+    int len = strlen(b), index = 0, j;
+    unsigned int result = 0;
+
     if (b == NULL)
     {
         return (0);
     }
-    for (i = 0; i < len; i++)
-    {
-        if (b[i] != '0' || b[i] != '1')
-            return (0);
-    }
-    int index = 0;
-    int j;
-    unsigned int result = 0;
-    for (j = len; j > 0; j--)
+
+    for (j = len - 1; j >= 0; j--)
     {
         if (b[j] == '0')
         {
@@ -27,9 +44,12 @@ unsigned int binary_to_uint(const char *b)
         }
         else if (b[j] == '1')
         {
-            result += pow(2, index);
+            result += _pow(2, index);
             index++;
         }
+        else
+            return (0);
     }
+
     return (result);
 }
