@@ -2,25 +2,15 @@
 
 /**
  * get_bit - Get the bit object
- *
- * @n:
- * @index:
- * Return: int
+ * @n: unsigned long int
+ * @index: starting from 0 of the bit you want to get
+ * Return: the value of the bit
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-    int buffer[64];
-    int i = 0;
-    if (index >= sizeof(unsigned long int) * 8)
-    {
-        return (-1);
-    }
-    
-    while (n > 0)
-    {
-        buffer[i] = (n & 1) ? 1 : 0;
-        n = n >> 1;
-        i++;
-    }
-    return (buffer[index]);
+if (index >= sizeof(n) * 8)
+{
+return (-1);
+}
+return (n >> index & 1);
 }
