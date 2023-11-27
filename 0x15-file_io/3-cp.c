@@ -8,10 +8,8 @@
 */
 int main(int argc, char *argv[])
 {
-char *file_from = argv[1];
-char *file_to = argv[2];
+char *file_from = argv[1], *file_to = argv[2], *buffer;;
 int file_1, file_2, read_from, write_to;
-char *buffer;
 if (argc != 3)
 {
 dprintf(2, "Usage: cp file_from file_to\n");
@@ -30,6 +28,9 @@ dprintf(2, "Error: Can't write to %s\n", file_to);
 exit(99);
 }
 buffer = malloc(sizeof(char) * BUFFER);
+if (!buffer)
+return (-1);
+do {
 read_from = read(file_1, buffer, BUFFER);
 if (read_from == -1)
 {
@@ -42,6 +43,7 @@ if (write_to != read_from)
 dprintf(2, "Error: Can't write to %s\n", file_to);
 exit(99);
 }
+} while (read_from == BUFFER);
 free_close(&buffer, &file_1, &file_2);
 return (0);
 }
