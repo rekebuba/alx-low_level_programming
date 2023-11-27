@@ -20,5 +20,8 @@ int append_text_to_file(const char *filename, char *text_content);
 
 void free_close(char **buf, int *fd1, int *fd2);
 
+void print_error(const char *message);
+void print_elf_header(const Elf64_Ehdr *header);
+
 
 #endif
