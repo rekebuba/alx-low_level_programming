@@ -29,7 +29,7 @@ file = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 if (file == -1)
 return (-1);
 
-while (text_content[c])
+while (text_content[count])
 count++;
 
 n = write(file, text_content, count);
