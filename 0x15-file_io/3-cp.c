@@ -42,10 +42,16 @@ int main(int argc, char *argv[])
         dprintf(2, "Error: Can't write to %s\n", file_to);
         exit(99);
     }
-    free_close(buffer, file_1, file_2);
+    free_close(&buffer, &file_1, &file_2);
     return (0);
 }
 
+/**
+* main - a program that copies the content of a file to another file
+* @argc: the number of cmd-line arguments
+* @argv: argv[1] (source file), argv[2] (destination file)
+* Return: returns (0) success, exits on error
+*/
 void free_close(char **buf, int *fd1, int *fd2)
 {
 	int n, n1;
