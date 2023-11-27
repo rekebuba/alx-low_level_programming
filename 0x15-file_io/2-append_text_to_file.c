@@ -21,7 +21,7 @@ if (!filename)
 return (-1);
 
 /* Checks if file does not exist */
-if(access(filename, F_OK) == -1)
+if (access(filename, F_OK) == -1)
 return (-1);
 
 file = open(filename, O_WRONLY | O_APPEND, 0600);
@@ -30,7 +30,7 @@ return (-1);
 
 if (text_content)
 {
-while(text_content[len])
+while (text_content[len])
 len++;
 
 to_write = write(file, text_content, len);
