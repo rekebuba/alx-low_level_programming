@@ -47,10 +47,11 @@ return (0);
 }
 
 /**
-* main - a program that copies the content of a file to another file
-* @argc: the number of cmd-line arguments
-* @argv: argv[1] (source file), argv[2] (destination file)
-* Return: returns (0) success, exits on error
+* free_close - free malloc'd memory and closes opened files
+* @buf: pointer to the string buf
+* @fd1: pointer to the fd_from
+* @fd2: pointer to fd_to
+* Return: returns nothing
 */
 void free_close(char **buf, int *fd1, int *fd2)
 {
