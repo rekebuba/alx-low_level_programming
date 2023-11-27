@@ -25,7 +25,7 @@ if(access(filename, F_OK) == -1)
 return (-1);
 
 file = open(filename, O_WRONLY | O_APPEND, 0600);
-if (file = -1)
+if (file == -1)
 return (-1);
 
 if (text_content)
