@@ -8,7 +8,7 @@
 */
 int main(int argc, char *argv[])
 {
-int file_1, file_2, read_from, write_to;
+int file_1, file_2, read_from, write_to, i;
 char *file_from = argv[1], *file_to = argv[2];
 char *buffer;
 if (argc != 3)
@@ -31,6 +31,7 @@ exit(99);
 buffer = malloc(sizeof(char) * BUFFER);
 if (!buffer)
 return (-1);
+do {
 read_from = read(file_1, buffer, BUFFER);
 if (read_from == -1)
 {
@@ -43,6 +44,8 @@ if (write_to != read_from)
 dprintf(2, "Error: Can't write to %s\n", file_to);
 exit(99);
 }
+i++;
+} while (read_from == BUFFER);
 free_close(&buffer, &file_1, &file_2);
 return (0);
 }
@@ -60,7 +63,7 @@ int n, n1;
 
 free(*buf);
 n = close(*fd1);
-if (n == 1)
+if (n == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", *fd1);
 exit(100);
