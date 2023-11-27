@@ -1,6 +1,7 @@
 #ifndef FILE_IO
 #define FILE_IO
 
+#include <string.h>
 #include <stdio.h>
 #include <fcntl.h>
 #include <stdlib.h>
