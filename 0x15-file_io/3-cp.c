@@ -8,8 +8,9 @@
 */
 int main(int argc, char *argv[])
 {
-char *file_from = argv[1], *file_to = argv[2], *buffer;;
 int file_1, file_2, read_from, write_to;
+char *file_from = argv[1], *file_to = argv[2], *buffer;;
+
 if (argc != 3)
 {
 dprintf(2, "Usage: cp file_from file_to\n");
