@@ -1,8 +1,7 @@
 #include "main.h"
 
 /**
- * print_error
- * 
+ * print_error - print_error
  * @message: const char *message
  * Return: void
  */
@@ -10,12 +9,10 @@ void print_error(const char *message)
 {
 fprintf(stderr, "Error: %s\n", message);
 exit(98);
-
 }
 
 /**
  * print_elf_header - print_elf_header
- * 
  * @header: const Elf64_Ehdr *header
  * Return: void
  */
@@ -31,7 +28,7 @@ printf("\n");
 
 printf("Class: %d-bit\n", header->e_ident[EI_CLASS] == ELFCLASS32 ? 32 : 64);
 
-printf("Data: %s endian\n", header->e_ident[EI_DATA] == 
+printf("Data: %s endian\n", header->e_ident[EI_DATA] ==
 ELFDATA2LSB ? "little" : "big");
 
 printf("Version: %d\n", header->e_ident[EI_VERSION]);
