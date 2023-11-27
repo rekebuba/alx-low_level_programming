@@ -43,6 +43,7 @@ int main(int argc, char *argv[])
         exit(99);
     }
     free_close(buffer, file_1, file_2);
+    return (0);
 }
 
 void free_close(char **buf, int *fd1, int *fd2)
