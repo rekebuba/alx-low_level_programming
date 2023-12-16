@@ -3,7 +3,8 @@
         "main.h": "c",
         "stdio.h": "c",
         "string_view": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "stat.h": "c"
     },
     "cSpell.ignoreWords": [
         "argstostr",
