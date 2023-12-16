@@ -1,5 +1,5 @@
-#ifndef MAIN_HEADER_FILE
-#define MAIN_HERDER_FILE
+#ifndef MORE_POINTERS_ARRAYS
+#define MORE_POINTERS_ARRAYS
 
 #include <stdio.h>
 
