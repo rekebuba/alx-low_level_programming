@@ -6,13 +6,14 @@
  */
 int main(void)
 {
-char letter = 'z';
-char newline = '\n';
-while (letter >= 'a')
-{
-putchar(letter);
-letter--;
-}
-putchar(newline);
-return (0);
+	char letter = 'z';
+	char newline = '\n';
+
+	while (letter >= 'a')
+	{
+		putchar(letter);
+		letter--;
+	}
+	putchar(newline);
+	return (0);
 }
