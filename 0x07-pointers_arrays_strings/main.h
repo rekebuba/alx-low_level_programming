@@ -1,5 +1,5 @@
-#ifndef MAIN_HEADER_FILE
-#define MAIN_HERDER_FILE
+#ifndef _ARRAYS_STRINGS
+#define _ARRAYS_STRINGS
 
 char *_memset(char *s, char b, unsigned int n);
 char *_memcpy(char *dest, char *src, unsigned int n);
