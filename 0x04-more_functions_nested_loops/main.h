@@ -1,5 +1,5 @@
-#ifndef MAIN_HEADER_FILE
-#define MAIN_HERDER_FILE
+#ifndef MORE_FUNCTIONS
+#define MORE_FUNCTIONS
 
 #include <stdio.h>
 
