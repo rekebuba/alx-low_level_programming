@@ -10,7 +10,7 @@
  */
 int main(int argc, char *argv[] __attribute__((unused)))
 {
-(void) argv; /*Ignore argv*/
-printf("%i\n", argc - 1);
-return (0);
+	(void)argv; /*Ignore argv*/
+	printf("%i\n", argc - 1);
+	return (0);
 }
