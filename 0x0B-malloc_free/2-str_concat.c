@@ -13,6 +13,7 @@ char *str_concat(char *s1, char *s2)
 {
 	unsigned int i, l, len1, len2;
 	char *array;
+
 	if (s1 == NULL)
 	{
 		s1 = "";
