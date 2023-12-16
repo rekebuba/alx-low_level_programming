@@ -11,23 +11,24 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-unsigned int i, total;
-void *array;
-unsigned char *ptr;
-if (nmemb == 0 || size == 0)
-{
-return (NULL);
-}
-total = nmemb * size;
-array = malloc(total);
-if (array == NULL)
-{
-return (NULL);
-}
-ptr = (unsigned char *)array;
-for (i = 0; i < total; i++)
-{
-ptr[i] = 0;
-}
-return (array);
+	unsigned int i, total;
+	void *array;
+	unsigned char *ptr;
+
+	if (nmemb == 0 || size == 0)
+	{
+		return (NULL);
+	}
+	total = nmemb * size;
+	array = malloc(total);
+	if (array == NULL)
+	{
+		return (NULL);
+	}
+	ptr = (unsigned char *)array;
+	for (i = 0; i < total; i++)
+	{
+		ptr[i] = 0;
+	}
+	return (array);
 }
