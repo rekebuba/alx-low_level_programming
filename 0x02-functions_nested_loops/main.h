@@ -1,5 +1,5 @@
-#ifndef MAIN_HEADER_FILE
-#define MAIN_HERDER_FILE
+#ifndef HEADER_FILE_NAME_H
+#define HEADER_FILE_NAME_H
 
 int _putchar(char c);
 void print_alphabet(void);
@@ -15,4 +15,4 @@ int add(int, int);
 void print_to_98(int n);
 void print_times_table(int n);
 
-#endif
+#endif /* HEADER_FILE_NAME_H */
