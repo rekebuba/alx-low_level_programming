@@ -1,5 +1,5 @@
-#ifndef MAIN_HEADER_FILE
-#define MAIN_HERDER_FILE
+#ifndef RECURSION
+#define RECURSION
 
 void _puts_recursion(char *s);
 void _print_rev_recursion(char *s);
