@@ -20,7 +20,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		count++;
 	}
 
-	if (ptr == NULL || count < index)
+	if (*head == NULL || dlistint_len(ptr) < index + 1)
 		return (-1);
 
 	if (!index)
