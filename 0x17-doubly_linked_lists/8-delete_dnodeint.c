@@ -1,43 +1,63 @@
 #include "lists.h"
 
 /**
- * delete_dnodeint_at_index - delete node at index
+ * dlistint_len - returns the number of nodes in a doubly linked list
+ * @h: pointer to the list
  *
- * @head: head to the list
- * @index: index to be deleted
- * Return: 1 if it succeeded and -1 if failed
+ * Return: number of nodes
+ */
+size_t dlistint_len(const dlistint_t *h)
+{
+	size_t nodes = 0;
+
+	if (!h)
+		return (0);
+
+	while (h)
+	{
+		nodes++;
+		h = h->next;
+	}
+
+	return (nodes);
+}
+
+/**
+ * delete_dnodeint_at_index - deltes a node in a doubly linked list
+ * at a given index
+ * @head: double pointer to the list
+ * @index: index of the node to delete
+ *
+ * Return: 1 on success, -1 on failure
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *ptr = *head;
-	dlistint_t *temp1;
+	dlistint_t *temp = *head;
+	unsigned int i = 0;
 
-	unsigned int count = 0;
-
-	while (ptr != NULL && count < index)
-	{
-		ptr = ptr->next;
-		count++;
-	}
-
-	if (ptr == NULL || count < index)
+	if (*head == NULL || dlistint_len(temp) < index + 1)
 		return (-1);
 
 	if (!index)
 	{
-		(*head) = ptr->next;
-		if (ptr->next)
-			ptr->next->prev = NULL;
-		ptr->next = NULL;
-		free(ptr);
+		(*head) = temp->next;
+		if (temp->next)
+			temp->next->prev = NULL;
+		temp->next = NULL;
+		free(temp);
 		return (1);
 	}
-	if (index != 0)
+
+	while (i < index)
 	{
-		temp1 = ptr->prev;
-		temp1->next = ptr->next;
-		temp1->next->prev = ptr;
+		temp = temp->next;
+		i++;
 	}
-	free(ptr);
+
+	temp->prev->next = temp->next;
+	if (temp->next)
+		temp->next->prev = temp->prev;
+	free(temp);
+
 	return (1);
 }
