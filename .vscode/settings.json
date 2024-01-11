@@ -4,7 +4,8 @@
         "stdio.h": "c",
         "string_view": "c",
         "string.h": "c",
-        "stat.h": "c"
+        "stat.h": "c",
+        "lists.h": "c"
     },
     "cSpell.ignoreWords": [
         "argstostr",
@@ -16,6 +17,7 @@
     ],
     "cSpell.words": [
         "dlistint",
+        "dnodeint",
         "Ehdr",
         "ehsize",
         "fsacnf",
