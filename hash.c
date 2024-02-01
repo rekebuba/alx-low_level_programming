@@ -53,34 +53,43 @@ int main(void)
 	hash_table_set(ht, "Asterix", "Obelix");
 	hash_table_set(ht, "Betty", "Cool");
 	hash_table_set(ht, "98", "Battery Street");
+	hash_table_set(ht, "hetairas", "A");
+	hash_table_set(ht, "mentioner", "B");
+
 	hash_table_print(ht);
 	return (EXIT_SUCCESS);
 }
 
 void hash_table_print(const hash_table_t *ht)
 {
-    long unsigned int i, j;
-    char *last = NULL;
-    for (j = 0; j < ht->size; j++)
-    {
-        if (ht->array[j] != NULL)
-            last = ht->array[j]->value;
-    }
-    printf("{");
-    for (i = 0; i < ht->size; i++)
-    {
-        if (ht->array[i] != NULL)
-        {
-            printf("\'%s\': \'%s\'", ht->array[i]->key, ht->array[i]->value);
-            if (ht->array[i]->value != last)
-            {
-                printf(", ");
-            }
-        }
-    }
-    printf("}\n");
-}
+	unsigned long int i, j;
+	hash_node_t *ptr;
+	char *last = NULL;
 
+	for (j = 0; j < ht->size; j++)
+	{
+		if (ht->array[j] != NULL)
+			last = ht->array[j]->value;
+	}
+	printf("{");
+	for (i = 0; i < ht->size; i++)
+	{
+		if (ht->array[i] != NULL)
+		{
+			ptr = ht->array[i];
+			while (ptr != NULL)
+			{
+				printf("\'%s\': \'%s\'", ht->array[i]->key, ht->array[i]->value);
+				if (ht->array[i]->value != last)
+				{
+					printf(", ");
+				}
+				ptr = ptr->next;
+			}
+		}
+	}
+	printf("}\n");
+}
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
     unsigned long a;
