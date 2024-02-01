@@ -39,16 +39,32 @@ char *hash_table_get(const hash_table_t *ht, const char *key);
 void hash_table_print(const hash_table_t *ht);
 void hash_table_delete(hash_table_t *ht);
 
-
 int main(void)
 {
-	hash_table_t *ht;
+	char *s;
+	unsigned long int hash_table_array_size;
 
-	ht = hash_table_create(1024);
-	printf("%p\n", (void *)ht);
+	hash_table_array_size = 1024;
+	s = "cisfun";
+	printf("%lu\n", hash_djb2((unsigned char *)s));
+	printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));
+	s = "Don't forget to tweet today";
+	printf("%lu\n", hash_djb2((unsigned char *)s));
+	printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));
+	s = "98";
+	printf("%lu\n", hash_djb2((unsigned char *)s));
+	printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));  
 	return (EXIT_SUCCESS);
 }
 
+unsigned long int key_index(const unsigned char *key, unsigned long int size)
+{
+    unsigned long int index;
+    unsigned long value = hash_djb2(key);
+    index = value % size;
+    return (index);
+
+}
 
 hash_table_t *hash_table_create(unsigned long int size)
 {
@@ -67,4 +83,18 @@ hash_table_t *hash_table_create(unsigned long int size)
 		table->array[i] = NULL;
 	}
 	return (table);
+}
+
+
+unsigned long int hash_djb2(const unsigned char *str)
+{
+	unsigned long int hash;
+	int c;
+
+	hash = 5381;
+	while ((c = *str++))
+	{
+		hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
+	}
+	return (hash);
 }
