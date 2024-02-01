@@ -33,7 +33,7 @@ void hash_table_print(const hash_table_t *ht)
 			while (ptr != NULL)
 			{
 				printf("\'%s\': \'%s\'", ptr->key, ptr->value);
-				if (ht->array[i]->value != last)
+				if (ptr->value != last)
 				{
 					printf(", ");
 				}
