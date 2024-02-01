@@ -38,23 +38,46 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 char *hash_table_get(const hash_table_t *ht, const char *key);
 void hash_table_print(const hash_table_t *ht);
 void hash_table_delete(hash_table_t *ht);
+hash_node_t *add_nodeint(hash_node_t **head, const char *key, const char *value);
 
 int main(void)
 {
-	char *s;
-	unsigned long int hash_table_array_size;
+	hash_table_t *ht;
 
-	hash_table_array_size = 1024;
-	s = "cisfun";
-	printf("%lu\n", hash_djb2((unsigned char *)s));
-	printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));
-	s = "Don't forget to tweet today";
-	printf("%lu\n", hash_djb2((unsigned char *)s));
-	printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));
-	s = "98";
-	printf("%lu\n", hash_djb2((unsigned char *)s));
-	printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));  
+	ht = hash_table_create(1024);
+	printf("%d\n", hash_table_set(ht, "hetairas", "A"));
+	printf("%d\n", hash_table_set(ht, "mentioner", "B"));
+	printf("%d\n", hash_table_set(ht, "betty", "C"));
 	return (EXIT_SUCCESS);
+}
+
+int hash_table_set(hash_table_t *ht, const char *key, const char *value)
+{
+    unsigned long a;
+    if (key == NULL)
+        return (0);
+
+    a = key_index((unsigned char *)key, 1024);
+
+    if (!add_nodeint(&ht->array[a], key, value))
+        return (0);
+
+    return (1);
+}
+
+hash_node_t *add_nodeint(hash_node_t **head, const char *key, const char *value)
+{
+    hash_node_t *new_nod = malloc(sizeof(hash_node_t));
+
+    if (new_nod == NULL)
+    {
+        return (NULL);
+    }
+    new_nod->key = (char *)key;
+    new_nod->value = (char *)value;
+    new_nod->next = *head;
+    *head = new_nod;
+    return (new_nod);
 }
 
 unsigned long int key_index(const unsigned char *key, unsigned long int size)

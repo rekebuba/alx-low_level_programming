@@ -6,7 +6,8 @@
         "string.h": "c",
         "stat.h": "c",
         "lists.h": "c",
-        "hash_tables.h": "c"
+        "hash_tables.h": "c",
+        "unistd.h": "c"
     },
     "cSpell.ignoreWords": [
         "argstostr",
