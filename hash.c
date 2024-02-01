@@ -45,10 +45,40 @@ int main(void)
 	hash_table_t *ht;
 
 	ht = hash_table_create(1024);
-	printf("%d\n", hash_table_set(ht, "hetairas", "A"));
-	printf("%d\n", hash_table_set(ht, "mentioner", "B"));
-	printf("%d\n", hash_table_set(ht, "betty", "C"));
+	hash_table_print(ht);
+	hash_table_set(ht, "c", "fun");
+	hash_table_set(ht, "python", "awesome");
+	hash_table_set(ht, "Bob", "and Kris love asm");
+	hash_table_set(ht, "N", "queens");
+	hash_table_set(ht, "Asterix", "Obelix");
+	hash_table_set(ht, "Betty", "Cool");
+	hash_table_set(ht, "98", "Battery Street");
+	hash_table_print(ht);
 	return (EXIT_SUCCESS);
+}
+
+void hash_table_print(const hash_table_t *ht)
+{
+    long unsigned int i, j;
+    char *last = NULL;
+    for (j = 0; j < ht->size; j++)
+    {
+        if (ht->array[j] != NULL)
+            last = ht->array[j]->value;
+    }
+    printf("{");
+    for (i = 0; i < ht->size; i++)
+    {
+        if (ht->array[i] != NULL)
+        {
+            printf("\'%s\': \'%s\'", ht->array[i]->key, ht->array[i]->value);
+            if (ht->array[i]->value != last)
+            {
+                printf(", ");
+            }
+        }
+    }
+    printf("}\n");
 }
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
@@ -63,6 +93,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
         return (0);
 
     return (1);
+}
+
+char *hash_table_get(const hash_table_t *ht, const char *key)
+{
+	unsigned long int index;
+
+	if (key == NULL)
+	{
+		return (NULL);
+	}
+	index = key_index((unsigned char *)key, ht->size);
+	if (ht->array[index] == NULL)
+		return (NULL);
+	return (ht->array[index]->value);
 }
 
 hash_node_t *add_nodeint(hash_node_t **head, const char *key, const char *value)
