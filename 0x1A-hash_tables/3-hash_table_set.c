@@ -38,8 +38,8 @@ hash_node_t *add_nodeint(hash_node_t **head, const char *key,
 	{
 		return (NULL);
 	}
-	new_nod->key = (char *)key;
-	new_nod->value = (char *)value;
+	new_nod->key = strdup(key);
+	new_nod->value = strdup(value);
 	new_nod->next = *head;
 	*head = new_nod;
 	return (new_nod);
