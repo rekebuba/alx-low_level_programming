@@ -5,7 +5,8 @@
         "string_view": "c",
         "string.h": "c",
         "stat.h": "c",
-        "lists.h": "c"
+        "lists.h": "c",
+        "hash_tables.h": "c"
     },
     "cSpell.ignoreWords": [
         "argstostr",
