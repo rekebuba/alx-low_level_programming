@@ -26,9 +26,12 @@
         "phentsize",
         "phnum",
         "phoff",
+        "shash",
+        "shead",
         "shentsize",
         "shnum",
         "shoff",
-        "shstrndx"
+        "shstrndx",
+        "stail"
     ]
 }

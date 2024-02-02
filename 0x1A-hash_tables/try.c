@@ -101,24 +101,41 @@ void insert_sort(shash_node_t *node, shash_table_t *ht)
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
 	unsigned long int index;
-	shash_node_t *ptr;
+	shash_node_t *node = NULL;
 
-	if (key == NULL)
+	if (!ht || !key || !strcmp(key, ""))
 		return (NULL);
 
-	index = key_index((unsigned char *)key, ht->size);
-	if (ht->array[index] == NULL)
-		return (NULL);
-	ptr = ht->array[index];
-    while (ptr != NULL)
-    {
-        if (strcmp(ptr->key, key))
-            return (ptr->value);
-        ptr = ptr->next;
-    }
+	index = key_index((const unsigned char *)key, ht->size);
+	node = (ht->array)[index];
+
+	while (node)
+	{
+		if (!strcmp(node->key, key))
+			return (node->value);
+		node = node->next;
+	}
+
 	return (NULL);
 }
+unsigned long int key_index(const unsigned char *key, unsigned long int size)
+{
+	unsigned long value = hash_djb2(key);
 
+	return (value % size);
+}
+unsigned long int hash_djb2(const unsigned char *str)
+{
+	unsigned long int hash;
+	int c;
+
+	hash = 5381;
+	while ((c = *str++))
+	{
+		hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
+	}
+	return (hash);
+}
 /**
  * shash_table_print - prints a hash table
  * @ht: hash table to print
@@ -281,4 +298,35 @@ void free_list_s(shash_node_t *head)
 		free(head);
 		head = temp;
 	}
+}
+
+/**
+ * main - check the code
+ *
+ * Return: Always EXIT_SUCCESS.
+ */
+int main(void)
+{
+    shash_table_t *ht;
+
+    ht = shash_table_create(1024);
+    shash_table_set(ht, "a", "0");
+    shash_table_print(ht);
+    shash_table_set(ht, "a", "1");
+    shash_table_print(ht);
+    shash_table_set(ht, "a", "2");
+    shash_table_print(ht);
+    shash_table_set(ht, "b", "3");
+    shash_table_print(ht);
+    shash_table_set(ht, "z", "4");
+    shash_table_print(ht);
+    shash_table_set(ht, "n", "5");
+    shash_table_print(ht);
+    shash_table_set(ht, "a", "6");
+    shash_table_print(ht);
+    shash_table_set(ht, "m", "7");
+    shash_table_print(ht);
+    shash_table_print_rev(ht);
+        shash_table_delete(ht);
+    return (EXIT_SUCCESS);
 }
