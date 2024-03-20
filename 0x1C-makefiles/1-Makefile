@@ -4,4 +4,7 @@ CC = gcc main.c school.c -o school
 SRC = *.c
 
 all: school
+
+.PHONY: school
+school:
 	${CC}
