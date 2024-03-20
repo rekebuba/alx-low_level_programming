@@ -1,7 +1,7 @@
 .PHONY: all
 
-CC:= gcc main.c school.c -o school
-SRC:= *.c
+CC = gcc main.c school.c -o school
+SRC = *.c
 
 all: school
 	${CC}
