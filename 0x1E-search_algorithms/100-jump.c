@@ -2,7 +2,7 @@
 #include <math.h>
 
 /**
- * binary_search - A function that searches for a value
+ * jump_search - A function that searches for a value
  * in a sorted array of integers using the Jump search algorithm
  *
  * @array: pointer to the first element of the array to search in
