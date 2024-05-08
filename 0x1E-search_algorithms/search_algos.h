@@ -50,7 +50,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value);
 skiplist_t *linear_skip(skiplist_t *list, int value);
 
 int interpolation_helper(int *array, int low, int high, size_t size, int val);
-int binarySearchIterative(int *array, int left, int right, int target);
+int binarySearchIterative(int *array, size_t left, size_t right, int target);
 int binarySearchRecursive(int *array, size_t left, size_t right, int value);
 
 #endif /* SEARCH_ALGORITHMS */

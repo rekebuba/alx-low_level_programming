@@ -12,7 +12,7 @@
 int exponential_search(int *array, size_t size, int value)
 {
 	size_t i = 1;
-	int right, left;
+	size_t right, left;
 
 	if (array == NULL)
 		return (-1);
@@ -29,7 +29,7 @@ int exponential_search(int *array, size_t size, int value)
 	else
 		right = i;
 	left = i / 2;
-	printf("Value found between indexes [%d] and [%d]\n", left, right);
+	printf("Value found between indexes [%ld] and [%ld]\n", left, right);
 	return (binarySearchIterative(array, left, right, value));
 }
 
@@ -42,9 +42,10 @@ int exponential_search(int *array, size_t size, int value)
  * @target: the number of elements in array
  * Return: the first index where target is located if not return -1
  */
-int binarySearchIterative(int *array, int left, int right, int target)
+int binarySearchIterative(int *array, size_t left, size_t right, int target)
 {
-	int i, mid;
+	size_t i;
+	int mid;
 
 	while (left <= right)
 	{
