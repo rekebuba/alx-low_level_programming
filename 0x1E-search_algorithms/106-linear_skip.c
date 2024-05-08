@@ -1,113 +1,55 @@
 #include "search_algos.h"
 
-skiplist_t *create_skiplist(int *array, size_t size);
-void print_skiplist(const skiplist_t *list);
-void free_skiplist(skiplist_t *list);
-
-
+/**
+ * linear_skip - searches for a value conatined in a skip list; assumes a
+ * list with sorted values and a single skip layer with nodes at every index
+ * which is a multiple of the square root of the size of the list
+ *
+ * @list: pointer to the head of the skip list to traverse
+ * @value: value to search for
+ * Return: pointer on the first node where value is located, or NULL if list
+ * is NULL or value not found
+ */
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-    
-}
+	skiplist_t *temp = NULL, *stop = NULL;
 
+	if (!list)
+		return (NULL);
 
-void free_skiplist(skiplist_t *list);
-
-/**
- * init_express - Initializes the express lane of the linked list
- *
- * @list: Pointer to the head node of the list
- * @size: Number of nodes in the list
- */
-void init_express(skiplist_t *list, size_t size)
-{
-	const size_t step = sqrt(size);
-	size_t i;
-	skiplist_t *save;
-
-	for (save = list, i = 0; i < size; ++i, list = list->next)
+	temp = list;
+	while (temp && temp->express && temp->express->n < value)
 	{
-		if (i % step == 0)
-		{
-			save->express = list;
-			save = list;
-		}
+		printf("Value checked at index [%lu] = [%i]\n",
+			   temp->express->index, temp->express->n);
+		temp = temp->express;
 	}
-}
-
-/**
- * create_skiplist - Create a single linked list
- *
- * @array: Pointer to the array used to fill the list
- * @size: Size of the array
- *
- * Return: A pointer to the head of the created list (NULL on failure)
- */
-skiplist_t *create_skiplist(int *array, size_t size)
-{
-	skiplist_t *list;
-	skiplist_t *node;
-	size_t save_size;
-
-	list = NULL;
-	save_size = size;
-	while (array && size--)
+	stop = temp;
+	while (stop && stop->next != stop->express)
+		stop = stop->next;
+	/* value potentially lies between two express nodes */
+	if (temp->express)
 	{
-		node = malloc(sizeof(*node));
-		if (!node)
-		{
-			free_skiplist(list);
-			return (NULL);
-		}
-		node->n = array[size];
-		node->index = size;
-		node->express = NULL;
-		node->next = list;
-		list = node;
+		printf("Value checked at index [%lu] = [%i]\n",
+			   temp->express->index, temp->express->n);
+		printf("Value found between indexes [%lu] and [%lu]\n",
+			   temp->index, temp->express->index);
 	}
-	init_express(list, save_size);
-	return (list);
-}
+	/* value is greater than last express node, potentially out of list */
+	else
+		printf("Value found between indexes [%lu] and [%lu]\n",
+			   temp->index, stop->index);
 
-
-/**
- * free_skiplist - Deallocates a singly linked list
- *
- * @list: Pointer to the linked list to be freed
- */
-void free_skiplist(skiplist_t *list)
-{
-	skiplist_t *node;
-
-	if (list)
+	while (temp != stop && temp->n < value)
 	{
-		node = list->next;
-		free(list);
-		free_skiplist(node);
+		printf("Value checked at index [%lu] = [%i]\n",
+			   temp->index, temp->n);
+		temp = temp->next;
 	}
-}
+	printf("Value checked at index [%lu] = [%i]\n",
+		   temp->index, temp->n);
 
-
-/**
- * print_skiplist - dump the content of a skiplist_t
- *
- * @list: Pointer to the head of the list
- *
- * Return: void
- */
-void print_skiplist(const skiplist_t *list)
-{
-	const skiplist_t *node;
-
-	printf("List :\n");
-	for (node = list; node; node = node->next)
-	{
-		printf("Index[%lu] = [%d]\n", node->index, node->n);
-	}
-	printf("\nExpress lane :\n");
-	for (node = list; node; node = node->express)
-	{
-		printf("Index[%lu] = [%d]\n", node->index, node->n);
-	}
-	printf("\n");
+	if (temp == stop)
+		return (NULL);
+	return (temp);
 }
