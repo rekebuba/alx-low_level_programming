@@ -49,5 +49,6 @@ listint_t *jump_list(listint_t *list, size_t size, int value);
 skiplist_t *linear_skip(skiplist_t *list, int value);
 
 int interpolation_search_helper(int *array, int low, int high, size_t size, int value);
+int binarySearchIterative(int *array, int left, int right, int target);
 
 #endif
