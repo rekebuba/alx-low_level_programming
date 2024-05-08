@@ -50,5 +50,6 @@ skiplist_t *linear_skip(skiplist_t *list, int value);
 
 int interpolation_search_helper(int *array, int low, int high, size_t size, int value);
 int binarySearchIterative(int *array, int left, int right, int target);
+int binarySearchRecursive(int *array, int left, int right, int value);
 
 #endif
