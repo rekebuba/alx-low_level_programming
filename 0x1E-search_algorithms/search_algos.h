@@ -15,9 +15,9 @@
  */
 typedef struct listint_s
 {
-    int n;
-    size_t index;
-    struct listint_s *next;
+	int n;
+	size_t index;
+	struct listint_s *next;
 } listint_t;
 
 /**
@@ -32,10 +32,10 @@ typedef struct listint_s
  */
 typedef struct skiplist_s
 {
-    int n;
-    size_t index;
-    struct skiplist_s *next;
-    struct skiplist_s *express;
+	int n;
+	size_t index;
+	struct skiplist_s *next;
+	struct skiplist_s *express;
 } skiplist_t;
 
 
@@ -48,8 +48,8 @@ int advanced_binary(int *array, size_t size, int value);
 listint_t *jump_list(listint_t *list, size_t size, int value);
 skiplist_t *linear_skip(skiplist_t *list, int value);
 
-int interpolation_search_helper(int *array, int low, int high, size_t size, int value);
+int interpolation_helper(int *array, int low, int high, size_t size, int val);
 int binarySearchIterative(int *array, int left, int right, int target);
 int binarySearchRecursive(int *array, int left, int right, int value);
 
-#endif
+#endif /* SEARCH_ALGORITHMS */
