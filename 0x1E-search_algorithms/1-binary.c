@@ -11,36 +11,41 @@
  */
 int binary_search(int *array, size_t size, int value)
 {
-	size_t i;
-	int right, mid;
+	return (binarySearchRecursive(array, 0, size - 1, value));
+}
+
+/**
+ * binarySearchRecursive - binary Search using Recursive approach
+ *
+ * @array: pointer to the first element of the array to search in
+ * @left: lower bound
+ * @right: upper bound
+ * @value: the number of elements in array
+ * Return: the first index where value is located if not return -1
+ */
+int binarySearchRecursive(int *array, int left, int right, int value)
+{
+	int i, mid, size;
+
+	size = (right - left) + 1;
+	mid = (right + left) / 2;
 
 	printf("Searching in array: ");
-	for (i = 0; i < size; i++)
+	for (i = left; i <= right; i++)
 	{
 		printf("%d", array[i]);
-		if (i != size - 1)
+		if (i != right)
 			printf(", ");
 		else
 			printf("\n");
-	}
-	mid = (size / 2);
-
-	if (size % 2 == 0)
-	{
-		mid = mid - 1;
-		right = mid + 1;
-	}
-	else
-	{
-		right = mid;
 	}
 
 	if (array[mid] == value)
 		return (mid);
 	else if (array[mid] > value && size > 1)
-		return (binary_search(array, mid, value));
+		return (binarySearchRecursive(array, 0, mid - 1, value));
 	else if (array[mid] < value && size > 1)
-		return (binary_search(array + mid + 1, right, value));
+		return (binarySearchRecursive(array, mid + 1, right, value));
 
 	return (-1);
 }
