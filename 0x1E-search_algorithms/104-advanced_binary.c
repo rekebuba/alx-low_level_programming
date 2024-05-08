@@ -23,9 +23,10 @@ int advanced_binary(int *array, size_t size, int value)
  * @value: the number of elements in array
  * Return: the first index where value is located if not return -1
  */
-int binarySearchRecursive(int *array, int left, int right, int value)
+int binarySearchRecursive(int *array, size_t left, size_t right, int value)
 {
-	int i, mid, size;
+	size_t i, size;
+	int mid;
 
 	size = (right - left) + 1;
 	mid = (right + left) / 2;
