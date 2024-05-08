@@ -11,15 +11,11 @@
  */
 int interpolation_search(int *array, size_t size, int value)
 {
-	int low = 0;
-	int high = size - 1;
-
 	if (array == NULL)
 		return (-1);
 
-	return (interpolation_helper(array, low, high, size, value));
+	return (interpolation_helper(array, 0, size - 1, size, value));
 }
-
 
 /**
  * interpolation_helper - A recursive call to implement
