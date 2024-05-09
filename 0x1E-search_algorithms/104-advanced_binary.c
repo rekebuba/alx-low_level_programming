@@ -44,13 +44,13 @@ int binarySearchRecursive(int *array, size_t left, size_t right, int value)
 	if (array[mid] == value)
 	{
 		if (array[mid - 1] == array[mid] && size > 2)
-			return (binarySearchRecursive(array, 0, mid, value));
+			return (binarySearchRecursive(array, left, mid, value));
 		else if (array[mid + 1] == array[mid] && size > 2)
 			return (binarySearchRecursive(array, mid, right, value));
 		return (mid);
 	}
 	else if (array[mid] > value && size > 1)
-		return (binarySearchRecursive(array, 0, mid - 1, value));
+		return (binarySearchRecursive(array, left, mid - 1, value));
 	else if (array[mid] < value && size > 1)
 		return (binarySearchRecursive(array, mid + 1, right, value));
 
