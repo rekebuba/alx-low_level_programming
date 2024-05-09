@@ -43,8 +43,8 @@ int interpolation_helper(int *array, int low, int high, size_t size, int value)
 	if (array[pos] == value)
 		return (pos);
 	else if (array[pos] > value && size > 1)
-		return (interpolation_helper(array, 0, pos - 1, size, value));
+		return (interpolation_helper(array, low, pos - 1, size, value));
 	else if (array[pos] < value && size > 1)
-		return (interpolation_helper(array, pos + 1, size - pos - 1, size, value));
+		return (interpolation_helper(array, pos + 1, high, size, value));
 	return (-1);
 }
