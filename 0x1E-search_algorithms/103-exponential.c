@@ -19,16 +19,18 @@ int exponential_search(int *array, size_t size, int value)
 	if (array[0] == value)
 		return (0);
 
-	while (array[i] < value && i < size)
+	while (i < size && array[i] < value)
 	{
 		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 		i = i * 2;
 	}
+
 	if (i == size)
 		right = i - 1;
 	else
 		right = i;
 	left = i / 2;
+
 	printf("Value found between indexes [%ld] and [%ld]\n", left, right);
 	return (binarySearchIterative(array, left, right, value));
 }
