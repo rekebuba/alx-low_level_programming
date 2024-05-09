@@ -11,6 +11,8 @@
  */
 int advanced_binary(int *array, size_t size, int value)
 {
+	if (array == NULL)
+		return (-1);
 	return (binarySearchRecursive(array, 0, size - 1, value));
 }
 
@@ -56,3 +58,4 @@ int binarySearchRecursive(int *array, size_t left, size_t right, int value)
 
 	return (-1);
 }
+
